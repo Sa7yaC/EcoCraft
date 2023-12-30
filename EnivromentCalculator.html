@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environmental Harm Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add your CSS styles here if needed */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .calculator-container {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        select, input, button {
+            margin-top: 5px;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: #fff;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calculator-container">
+        <h2>Environmental Harm Calculator</h2>
+
+        <label for="pollutionType">Select Pollution Type:</label>
+        <select id="pollutionType" name="pollutionType" onchange="showAdditionalFields()">
+            <option value="treesCutting">Trees Cutting</option>
+            <option value="waterPollution">Water Pollution</option>
+            <option value="landPollution">Land Pollution</option>
+        </select>
+
+        <div id="additionalFields" style="display: none;">
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" placeholder="Enter quantity">
+
+            <label for="metrics">Select Metrics to feed:</label>
+            <select id="metrics" name="metrics">
+                <option value="units">Units</option>
+                <option value="kilograms">Kilograms</option>
+                <option value="liters">Liters</option>
+            </select>
+
+            <!-- Additional fields for specific pollution types -->
+            <div id="additionalFieldsTreesCutting" style="display: none;">
+                <label for="treeType">Select Tree Type:</label>
+                <select id="treeType" name="treeType">
+                    <option value="oak">Oak</option>
+                    <option value="pine">Pine</option>
+                    <option value="maple">Maple</option>
+                </select>
+            </div>
+
+            <button onclick="calculateHarm()">Calculate Harm</button>
+            <p id="result"></p>
+
+        </div>
+    </div>
+
+    <script>
+        function showAdditionalFields() {
+            var pollutionType = document.getElementById("pollutionType").value;
+            var additionalFields = document.getElementById("additionalFields");
+
+            // Hide all additional fields by default
+            var additionalFieldsTreesCutting = document.getElementById("additionalFieldsTreesCutting");
+            additionalFieldsTreesCutting.style.display = "none";
+
+            if (pollutionType === "treesCutting" || pollutionType === "waterPollution" || pollutionType === "landPollution") {
+                additionalFields.style.display = "block";
+
+                // Show additional fields specific to certain pollution types
+                if (pollutionType === "treesCutting") {
+                    additionalFieldsTreesCutting.style.display = "block";
+                }
+            } else {
+                additionalFields.style.display = "none";
+            }
+        }
+
+        function calculateHarm() {
+            var pollutionType = document.getElementById("pollutionType").value;
+            var quantity = parseFloat(document.getElementById("quantity").value);
+            var metrics = document.getElementById("metrics").value;
+            var result = document.getElementById("result");
+
+            if (isNaN(quantity) || quantity <= 0) {
+                result.textContent = "Please enter a valid quantity.";
+                return;
+            }
+
+            // Perform calculations based on the selected pollution type
+            if (pollutionType === "treesCutting") {
+                var treeType = document.getElementById("treeType").value;
+                var { harm, recoveryTime } = calculateTreesCuttingHarm(quantity, treeType);
+                result.textContent = `Harm caused by cutting ${quantity} ${metrics} of ${treeType} trees: In terms of oxygen loss  ${harm} litre . Estimated recovery time: ${recoveryTime} year.`;
+            } else if (pollutionType === "waterPollution") {
+                var { harm, recoveryTime } = calculateWaterPollutionHarm(quantity);
+                result.textContent = `Harm caused by dumping ${quantity} ${metrics} of waste into water: ${harm} mg/l. Estimated recovery time: ${recoveryTime} year.`;
+            } else if (pollutionType === "landPollution") {
+                var { harm, recoveryTime } = calculateLandPollutionHarm(quantity);
+                result.textContent = `Harm caused by land pollution with ${quantity} ${metrics} of waste:Contaniment Concertratiion ${harm} ppm . Estimated recovery time: ${recoveryTime} year.`;
+            }
+        }
+
+        function calculateTreesCuttingHarm(quantity, treeType) {
+            // Placeholder formula, replace with appropriate calculation
+            const harm = quantity * (treeType === "oak" ? 5 : (treeType === "pine" ? 8 : 10));
+            const recoveryFactor = 0.2; // Example recovery factor, adjust as needed
+            const recoveryTime = calculateRecoveryTime(harm, recoveryFactor);
+            return { harm, recoveryTime };
+        }
+
+        function calculateWaterPollutionHarm(quantity) {
+            // Placeholder formula, replace with appropriate calculation
+            const harm = quantity * 15;
+            const recoveryFactor = 0.3; // Example recovery factor, adjust as needed
+            const recoveryTime = calculateRecoveryTime(harm, recoveryFactor);
+            return { harm, recoveryTime };
+        }
+
+        function calculateLandPollutionHarm(quantity) {
+            // Placeholder formula, replace with appropriate calculation
+            const harm = quantity * 12;
+            const recoveryFactor = 0.25; // Example recovery factor, adjust as needed
+            const recoveryTime = calculateRecoveryTime(harm, recoveryFactor);
+            return { harm, recoveryTime };
+        }
+
+        function calculateRecoveryTime(harm, recoveryFactor) {
+            // Placeholder formula, replace with appropriate calculation
+            return harm * recoveryFactor;
+        }
+    </script>
+
+</body>
+</html>
+
+
+    
+
+
