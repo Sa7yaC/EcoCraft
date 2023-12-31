@@ -4,7 +4,7 @@
 }
 /* -------------------------------Front Page Background------------ */
 .background{
-    background-image: url(Pageview.jpg);
+    background-image: url(./Pageview.jpg);
     background-size: 100;
 }
 /* -------------------------------Navbar-------------------------- */
@@ -53,7 +53,7 @@ nav {
     background-color: #287c00;
 }
 .user{
-    background-image: url(/Photos/user.png);    
+    background-image: url(./Photos/user.png);    
     align-items: center;
 }
 .login button{
@@ -78,7 +78,7 @@ nav {
     padding-bottom: 5rem;
 }
 div .Image{
-    background-image: url(/Pageview.jpg);
+    background-image: url(./Pageview.jpg);
     background-size: cover;
 }
 div .Intro{
@@ -134,7 +134,7 @@ button.Learn{
     object-fit: cover;
     border-radius: 50%;
     background-size: cover;
-    background-image: url(/Why.jpg);
+    background-image: url(./Why.jpg);
 }
 .Details{
     margin: 2rem;
@@ -248,62 +248,62 @@ div .f4{
   }
   /* ----------Products pics-------------- */
     .grid-item1{
-        background-image: url(/Eco-craft/Google-Nest-Thermostat.webp);
+        background-image: url(./Eco-craft/Google-Nest-Thermostat.webp);
         background-size: 70%;
         background-repeat: no-repeat;
     }
     .grid-item2{
-        background-image: url(/Eco-craft/Allbirds-Wool-Runners.jpeg);
+        background-image: url(./Eco-craft/Allbirds-Wool-Runners.jpeg);
         background-size: 70%;
         background-repeat: no-repeat;
     }
     .grid-item3{
-        background-image: url(/Eco-craft/BeeGreen-Reusable-Grocery-Bags.jpg);
+        background-image: url(./Eco-craft/BeeGreen-Reusable-Grocery-Bags.jpg);
         background-size: 70%;
         background-repeat: no-repeat;
     }
     .grid-item4{
-        background-image: url(/Eco-craft/Bees-Wrap-Wax-Wrap.jpeg);
+        background-image: url(./Eco-craft/Bees-Wrap-Wax-Wrap.jpeg);
         background-size: 70%;
         background-repeat: no-repeat;
     }
     .grid-item5{
-        background-image: url(/Eco-craft/Compostable-Paper-Plates-Set.jpeg);
+        background-image: url(./Eco-craft/Compostable-Paper-Plates-Set.jpeg);
         background-size: 70%;
         background-repeat: no-repeat;
     }
     .grid-item6{
-        background-image: url(/Eco-craft/Earth-Breeze-Laundry-Sheets.webp);
+        background-image: url(./Eco-craft/Earth-Breeze-Laundry-Sheets.webp);
         background-size: 70%;
         background-repeat: no-repeat;
     }
     .grid-item7{
-        background-image: url(/Eco-craft/Blueland-Cleaning-Products.webp);
+        background-image: url(./Eco-craft/Blueland-Cleaning-Products.webp);
         background-size: 70%;
         background-repeat: no-repeat;
     }
     .grid-item8{
-        background-image: url(/Eco-craft/Smart-Home-Energy-Monitor.webp);
+        background-image: url(./Eco-craft/Smart-Home-Energy-Monitor.webp);
         background-size: 70%;
         background-repeat: no-repeat;
     }
     .grid-item9{
-        background-image: url(/Eco-craft/Leaf-Shave-Safety-Razor.webp);
+        background-image: url(./Eco-craft/Leaf-Shave-Safety-Razor.webp);
         background-size: 70%;
         background-repeat: no-repeat;
     }
     .grid-item10{
-        background-image: url(/Eco-craft/To-Go-Ware-Bamboo-Set.webp);
+        background-image: url(./Eco-craft/To-Go-Ware-Bamboo-Set.webp);
         background-size: 70%;
         background-repeat: no-repeat;
     }
     .grid-item11{
-        background-image: url(/Eco-craft/Tree-Bird-Waxed-Pure-Silk-Eco-Floss.webp);
+        background-image: url(./Eco-craft/Tree-Bird-Waxed-Pure-Silk-Eco-Floss.webp);
         background-size: 70%;
         background-repeat: no-repeat;
     }
     .grid-item12{
-        background-image: url(/Eco-craft/Swedish-Dishcloths.jpeg);
+        background-image: url(./Eco-craft/Swedish-Dishcloths.jpeg);
         background-size: 70%;
         background-repeat: no-repeat;
         
@@ -318,7 +318,7 @@ div .f4{
     align-items: center;
     justify-content: center;
     height: 50vh;
-    background-image: url(/calculator.jpg);
+    background-image: url(./calculator.jpg);
     background-size: cover
 }
 
